@@ -1,12 +1,36 @@
 # Recce
 
-Early on we decided to use [JAMF](https://www.jamf.com/) to track our PC's as well manage our MacOS and iOS devices. We continued using recon.exe after it was deprecated, but as the writing was on the wall (and the release notes),  another solution would be needed. I leveraged the experience I gained from writing [Tugboat](https://github.com/univ-of-utah-marriott-library-apple/scl_jamf_tools/blob/master/tugboat/README.md) and [Cargo Ship](https://github.com/univ-of-utah-marriott-library-apple/scl_jamf_tools/blob/master/cargo_ship/README.md) to develop Recce, a recon.exe replacement. 
+Early on we decided to use [JAMF](https://www.jamf.com/) to track our PC's as well manage our MacOS and iOS devices. We continued using recon.exe after it was deprecated, but as the writing was on the wall (and the release notes),  another solution would be needed. I leveraged the experience I gained from writing [Tugboat](https://github.com/univ-of-utah-marriott-library-apple/scl_jamf_tools/blob/master/tugboat/README.md) and [Cargo Ship](https://github.com/univ-of-utah-marriott-library-apple/scl_jamf_tools/blob/master/cargo_ship/README.md) to develop Recce, a recon.exe replacement.
 
 Recce duplicates much of the original recon.exe binary and uses JAMF's REST API to upload the inventory information. Using JAMF's API is a safe and reliable way to read and write data to your JAMF instance.
 
 You can learn how to pronounce "recce" and learn more about the project [here](https://stream.lib.utah.edu/index.php?c=details&id=13177).
 
-[TOC]
+## Contents
+
+- [Download](#download)
+- [Contact](#contact)
+- [System Requirements](#system-requirements)
+- [Install](#install)
+- [Uninstall](#uninstall)
+- [Purpose](#purpose)
+  - [What doesn't it do, compared to recon.exe?](#what-doesn%27t-it-do,-compared-to-recon.exe?)
+- [Usage](#usage)
+  - [Flags](#flags)
+  - [Configuration File](#configuration-file)
+  - [Slack](#slack)
+  - [Duplicated Values](#duplicated-values)
+  - [Log](#log)
+  - [User  privileges](#user-privileges)
+- [Rebuilding the Windows application](#rebuilding-the-windows-application)
+- [Program organization](#program-organization)
+  - [recce.py](#recce.py)
+  - [jss_login.py](#jss_login.py)
+  - [windows_computer.py](#windows_computer.py)
+- [How can you help?](#how-can-you-help?)
+  - [Linux/macOS support](#linux/macos-support)
+  - [Proper client side security](#proper-client-side-security)
+- [Update History](#update-history)
 
 ## Download
 
@@ -25,7 +49,7 @@ These requirements only apply if you're attempting to execute the raw source cod
 
 ## Install
 
-The repository contains a precompiled version of Recce. 
+The repository contains a precompiled version of Recce.
 
 ## Uninstall
 
@@ -146,7 +170,7 @@ Handles the gathering and formatting of hardware, disk and networking informatio
 
 I'm glad you asked!
 
-### Linux/macOS support.
+### Linux/macOS support
 
 I wrote Recce with the idea that other OS's could be supported using a similar methodology as the windows_computer.py module. I've provided data structures and supporting methods to handle most of the information handling and uploading. The non-trivial gathering of that data (disks, hardware, networking, etc.) is left to the user. However, if we get enough requests, I may consider adding additional OS support.
 
