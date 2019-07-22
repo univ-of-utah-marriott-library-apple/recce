@@ -26,6 +26,7 @@ This should not be blank.
 #
 #    1.0.0      2019.07.16     Initial version. tjm
 #
+#    1.0.1      2019.07.22      Adjusted server url handling. tjm
 #
 ################################################################################
 ################################################################################
@@ -83,7 +84,7 @@ elif platform.system() == 'Linux':
     pass
 
 
-__version__ = '1.0'
+__version__ = '1.0.1'
 
 
 def main():
