@@ -24,6 +24,8 @@ This should not be blank.
 #
 #    1.1.0      2019.07.16      Initial version. tjm
 #
+#    1.1.1      2019.07.22      Adjusted server url handling. tjm
+#
 #
 ################################################################################
 
@@ -82,11 +84,21 @@ class Login():
 
         # self.display_config()
 
-        if "https" and "8443" not in self.config_file.get('login', 'hosts'):
-            self.config_file.set('login', 'hosts', "https://" + self.config_file.get('login', 'hosts') + ":8443")
+        working_server_name = self.config_file.get('login', 'hosts')
+
+        if "https" not in working_server_name:
+            if "http" in working_server_name:
+                working_server_name.replace("http", "https")
+            else:
+                working_server_name = "https://" + working_server_name
+
+        if "jamfcloud" and "8443" not in working_server_name:
+            working_server_name = working_server_name +  ":8443"
+
+        self.config_file.set('login', 'hosts', working_server_name)
 
         #
-        # This is really important. This list contains the required rights for the fields we need to access
+        # THIS IS REALLY IMPORTANT. This list contains the required rights for the fields we need to access
         # Could be moved to configuration file, if appropriate.
         self.read_privileges = ['Read Computers', 'Read LDAP Servers', 'Read Accounts', 'Read User']
         self.update_privileges = ['Update Computers', 'Update User']

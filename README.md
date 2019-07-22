@@ -184,6 +184,7 @@ The user password is minimally obfuscated. Pull requests offering additional saf
 
 ## Update History
 
-| Date       | Notes            |
-| ---------- | ---------------- |
-| 2019.07.16 | Initial release. |
+| Date       | Version | Notes                         |
+| ---------- | ------- | ----------------------------- |
+| 2019.07.16 | 1.0     | Initial release.              |
+| 2019.07.22 | 1.0.1   | Adjusted server url handling. |
