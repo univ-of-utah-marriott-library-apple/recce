@@ -92,7 +92,10 @@ class Login():
             else:
                 working_server_name = "https://" + working_server_name
 
-        if "jamfcloud" and "8443" not in working_server_name:
+        if "jamfcloud" in working_server_name:
+            if ":8443" in working_server_name:
+                working_server_name = working_server_name[:-len(":8443")]
+        elif ":8443" not in working_server_name:
             working_server_name = working_server_name +  ":8443"
 
         self.config_file.set('login', 'hosts', working_server_name)

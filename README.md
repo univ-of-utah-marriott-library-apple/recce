@@ -188,3 +188,4 @@ The user password is minimally obfuscated. Pull requests offering additional saf
 | ---------- | ------- | ----------------------------- |
 | 2019.07.16 | 1.0     | Initial release.              |
 | 2019.07.22 | 1.0.1   | Adjusted server url handling. |
+| 2020.01.17 | 1.0.2   | Adjusted jamfcloud handling.  |

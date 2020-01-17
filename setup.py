@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
 	name='recce',
-	version='1.0.1',
+	version='1.0.2',
 	description='A recon.exe replacement',
 	author='Todd McDaniel',
 	author_email='todd.mcdaniel@utah.edu',

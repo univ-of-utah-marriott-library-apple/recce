@@ -28,6 +28,8 @@ This should not be blank.
 #
 #    1.0.1      2019.07.22      Adjusted server url handling. tjm
 #
+#    1.0.2      2020.01.06      Added jamfcloud accomodation. tjm
+#
 ################################################################################
 ################################################################################
 #
@@ -84,7 +86,7 @@ elif platform.system() == 'Linux':
     pass
 
 
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 
 def main():
